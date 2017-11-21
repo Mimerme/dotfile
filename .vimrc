@@ -62,8 +62,8 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-noremap <C-i> :set relativenumber <Enter>
-noremap <C-k> :set number <Enter>
+"Toggle between hybrid line numbers
+noremap <C-i> :set relativenumber! <Enter>
 
 "Turn off search highlighting after a search
 noremap <Space> :noh <Enter>
