@@ -8,11 +8,21 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+
+"Functional Plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 
+"Costmetic Plugins
+"Molokai Color Scheme
 Plugin 'tomasr/molokai'
+"General additional syntax highlighting
+Plugin 'sheerun/vim-polyglot'
+
+"Language Support Packs
+"Go-lang support
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,11 +48,25 @@ colorscheme molokai
 "Binds - all keybinds go here
 map <F2> :NERDTreeToggle <Enter>
 
+" enable line numbers
+let NERDTreeShowLineNumbers=1
+" make sure relative line numbers are used
+autocmd FileType nerdtree setlocal relativenumber
+
+"Turn on syntax highlighting
+set hlsearch
+
 "Navigate splits with Ctrl+<key>
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+
+noremap <C-i> :set relativenumber <Enter>
+noremap <C-k> :set number <Enter>
+
+"Turn off search highlighting after a search
+noremap <Space> :noh <Enter>
 
 "Navigate tabs with Shift+<key>
 noremap <S-j> :tabprevious <Enter>
