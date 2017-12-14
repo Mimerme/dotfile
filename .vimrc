@@ -19,10 +19,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tomasr/molokai'
 "General additional syntax highlighting
 Plugin 'sheerun/vim-polyglot'
+Plugin 'terryma/vim-multiple-cursors'
 
 "Language Support Packs
 "Go-lang support
 Plugin 'fatih/vim-go'
+"Markdown support
+"NOTE: You need to run npm install -g livedown for this to work
+Plugin 'shime/vim-livedown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,8 +66,8 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-noremap <C-i> :set relativenumber <Enter>
-noremap <C-k> :set number <Enter>
+"Toggle between hybrid line numbers
+noremap <C-i> :set relativenumber! <Enter>
 
 "Turn off search highlighting after a search
 noremap <Space> :noh <Enter>
@@ -81,3 +85,13 @@ let NERDTreeAutoDeleteBuffer = 1
 
 "More acccurate molokai color scheme 256 color terminals
 let g:rehash256 = 1
+
+"Write with root privs
+noremap <C-w> :w !sudo tee %
+
+set backspace=indent,eol,start
+
+"Set tabs to 4 sapces
+set tabstop=4
+set shiftwidth=4
+set expandtab
